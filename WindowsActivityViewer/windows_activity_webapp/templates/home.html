@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Windows Activity</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}">
+</head>
+<body>
+    <h1>Windows Activity</h1>
+    <table class="table table-striped table-sm">
+        <tr>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>App</th>
+            <th>Payload</th>
+            <th>Priority</th>
+            <th>IsLocalOnly</th>
+            <th>Platform</th>
+            <th>LastModifiedTime</th>
+            <th>ExpirationTime</th>
+        </tr>
+        {% for row in rows %}
+            <tr>
+                <td>{{ row.start_time }}</td>
+                <td>{{ row.end_time }}</td>
+                <td>{{ row.app }}</td>
+                <td>{{ row.payload }}</td>
+                <td>{{ row.priority }}</td>
+                <td>{{ row.is_local_only }}</td>
+                <td>{{ row.platform }}</td>
+                <td>{{ row.last_mod }}</td>
+                <td>{{ row.expiration }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
